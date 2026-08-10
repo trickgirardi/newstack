@@ -9,7 +9,7 @@ const findByIdService = (id) => User.findById(id);
 const updateService = (id, name, email, password, avatar, background) =>
   User.findOneAndUpdate(
     { _id: id },
-    { name, email, password, avatar, background }
+    { name, email, password, avatar, background },
   );
 
 export { createService, findAllService, findByIdService, updateService };

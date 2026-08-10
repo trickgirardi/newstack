@@ -296,10 +296,10 @@ const eraseComment = async (req, res) => {
     const commentDeleted = await eraseCommentService(idNews, idComment, userId);
 
     const commentFinder = commentDeleted.comments.find(
-      (comment) => comment.idComment === idComment
+      (comment) => comment.idComment === idComment,
     );
 
-    if(!commentFinder) {
+    if (!commentFinder) {
       return res.status(400).send({ message: "Comment not found" });
     }
 

@@ -9,13 +9,13 @@ const login = async (req, res) => {
 
     const passwordIsValid = bcrypt.compareSync(password, user.password);
 
-    if(!passwordIsValid || !user) {
+    if (!passwordIsValid || !user) {
       return res.status(404).send({ message: "User or password not found" });
     }
 
     const token = generateToken(user.id);
 
-    res.send({token});
+    res.send({ token });
   } catch (err) {
     console.log("Error Database: ", err);
     return res.status(500).send({ message: err.message });
